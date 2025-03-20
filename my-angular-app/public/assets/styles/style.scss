@@ -1,0 +1,414 @@
+$primary-color: #d50821;
+$grey-color: #444444;
+$lgrey-color: #f5f5f5;
+
+.resume {
+    font-family: "Lato", sans-serif;
+    color: $grey-color;
+    line-height: 1;
+    position: relative;
+    background-color: #ffffff;
+    flex-direction: row-reverse;
+    width: 79rem;
+    margin: 0 auto;
+    z-index: 0;
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.5);
+}
+
+.red-rectangle {
+    position: absolute;
+    top: 2.3rem;
+    left: 0;
+    width: 28.8rem;
+    height: 21.6rem;
+    background-color: $primary-color;
+    z-index: -1;
+}
+
+.r3{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 3.5rem;
+    background-color: $primary-color;
+    height: 28.7%;
+    z-index: -1;
+}
+
+
+.grey-rectangle {
+    position: absolute;
+    top: 24.46rem;
+    left: 0;
+    width: 28.8rem;
+    height: 14.4rem;
+    background-color: $grey-color;
+    z-index: -1;
+}
+
+.lgrey-rectangle {
+    position: absolute;
+    top: 26.52rem;
+    left: 0;
+    width: 100%;
+    height: 12.34rem;
+    background-color: #f5f5f5;
+    z-index: -2;
+}
+
+
+.header {
+    display: flex;
+    padding: 4.21rem 0 0 7.28rem;
+}
+
+
+
+.icon-container {
+    font-size: 2rem;
+    width: 2.1rem;
+    height: 2.1rem;
+    margin-top: auto;
+    margin-right: 1.7rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.header .title {
+    margin: 0;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+}
+
+.photo img  {
+    width: 22.3rem;
+    background-color: #d2d2d2;
+    border-radius: 5%;
+    border: 0.8rem solid #ffffff;
+    object-fit: cover;
+}
+
+.info {
+    color: #ffffff;
+    margin: 1.5rem 0;
+}
+.info .John {
+    font-size: 4rem;
+    letter-spacing: -0.19px;
+    font-weight: 400;
+    margin: 0;  
+    text-transform: uppercase;
+}
+
+.info .Parker {
+    font-size: 4rem;
+    letter-spacing: -0.03px;
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.info p {
+    font-size: 1.25rem;
+    letter-spacing: 0.19rem;
+    font-weight: 400;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.about {
+    margin: 0.7rem 0;
+    margin-right: 3.3rem;
+    border: 0.19rem solid $primary-color;
+    height: 21rem;
+    border-left: none;
+}
+.about .about-info {
+    height: 16.8rem;
+    margin: 2rem 2.5rem;
+    padding: 2.4rem 2.4rem;
+    border-left: 0.19rem solid $grey-color;
+}
+
+
+.about p {
+   // width: 1235px;
+    //height: 302px;
+    font-size: 1.25rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+    text-align: justify;
+    text-align-last: center;
+}
+.contact {
+    margin-top: 1.5rem;
+    margin-right: 3.3rem;
+}
+
+.vertical-line {
+    margin-right: 1.5rem;
+    width: 0.03rem;
+    background-color: $grey-color;
+    height: 5.7rem;
+
+}
+
+.gsquare {
+   margin-top: 0.5rem;
+   margin-right: 1.5rem;
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: $grey-color;
+    z-index: 5;
+}
+.contact-list {
+    margin-top: 1.8rem;
+    gap: 3.5rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+.contact-list p{
+
+    margin-top: 2rem;
+}
+/* Стилі для посилань */
+.contact-list a {
+    color: $grey-color;
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    color: $primary-color;
+    /* Колір при наведенні */
+    text-decoration: underline;
+    /* Підкреслення при наведенні */
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.main-content .title {
+    margin-top: 3rem;
+    margin-bottom: 0;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    color: $primary-color;
+    font-weight: 900;
+}
+.main-content .name-info {
+    margin-top: 1.3rem;
+    margin-bottom: 0;
+} 
+.experience {
+    margin-left: 7.25rem;
+}
+
+.horizontal-line, .horizontal-line2 {
+    margin: 0;
+    background-color: $grey-color;
+    height: 0.15rem;
+}
+
+.horizontal-line2 {
+    margin-top: 3rem;
+    height: 0.5rem;
+    background-color: #6c6c6c;
+}
+
+.white-squares {
+    margin-top: 1.8rem;
+    margin-left: 0.6rem;
+}
+
+.wsquare {
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: #ffffff;
+    z-index: 5;
+}
+
+.round-rectangle {
+    margin-top: 1.8rem;
+    width: 1.75rem;
+    height: 28.3rem;
+    border-radius: 0.9rem;
+    background-color: $grey-color;
+}
+
+.job {
+padding-left: 2.2rem;
+}
+.name-and-year {
+
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+.year {
+    font-size: 0.9rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+.name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.specialty {
+    margin-top: 3.2rem;
+    margin-bottom: 0;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: $primary-color;
+    font-weight: 900;
+}
+
+.marker {
+    margin-top: auto;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: $grey-color;
+    border-radius: 0.4rem;
+}
+
+.red-rectangle2, .red-rectangle3 {
+
+    width: 3.5rem;
+    height: auto;
+    background-color: $primary-color;
+
+}
+
+.trapezoid {
+    position: absolute;
+    left: 0;
+    width: 36.8rem;
+    //max-height: 32.8rem;
+    height: 32.8rem;
+    background-color: #f5f5f5;
+    ;
+    clip-path: polygon(0% 0%, 80.5% 0%, 100% 100%, 0% 100%);
+    z-index: -1;
+}
+.skills-list {
+margin-left: 0.6rem;
+margin-bottom: 5.3rem;
+}
+.skill {
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+    margin-left: 1.7rem;
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+.progress-bar1 {
+  display: flex;
+  align-items: center;
+    margin-top: 2rem;
+    margin-left: 2.5rem;
+    width: 9.2rem;
+    background-color: #cfcfcf;
+    position: relative;
+    height: 0.4rem;
+    border-radius: 0.2rem;
+    overflow: visible;
+
+}
+
+.progress1 {
+    width: 0;
+    /* Початкова ширина 0 для анімації */
+    position: relative;
+    align-items: center;
+    height: 60%;
+    /* Висота прогрес-індикатора */
+    background-color: $primary-color;
+    border-radius: 0.2rem;
+    overflow: visible;
+    transition: width 2s ease-in-out, background-color 0.5s ease;
+    /* Об'єднано transition */
+}
+
+.progress1::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: $primary-color;
+    border-radius: 0;
+}
+
+.right-side {
+    text-align: end;
+    
+}
+
+.references {
+    padding-right: 7.2rem;
+}
+.degree {
+    padding-right: 2.2rem;
+}
+
+.person-name {
+    margin-top: 1.8rem;
+    margin-right: 1.7rem ;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    color: $primary-color;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.person-adress {
+    margin-top: 1.1rem;
+    margin-right: 2.4rem;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.09rem;
+    font-weight: 700;
+}
+.marker2 {
+    margin: auto 0;
+    margin-left: 1rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 0.2rem;
+    background-color: $primary-color;
+}
+.hobbies {
+    margin-bottom: 3.5rem;
+}
+
+.hobbies p {
+   margin: 0;
+    margin-left: 2.6rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.hobby {
+    margin-top: 2rem;
+}
+
+.roll-block {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.roll {
+    cursor: pointer;
+}

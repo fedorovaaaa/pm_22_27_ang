@@ -32,9 +32,13 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": [],
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+  "public/assets/styles//style.scss"
+]
+,
+            "scripts": [
+],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -96,8 +100,9 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
-            ],
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "src/styles.scss"
+],
             "scripts": []
           }
         }

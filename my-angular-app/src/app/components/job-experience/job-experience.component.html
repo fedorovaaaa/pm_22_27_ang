@@ -1,0 +1,65 @@
+<section class="experience">
+  <div class="d-flex">
+    <div class="icon-container">
+      <i class="bi bi-suitcase-lg-fill" style="color: #444444"></i>
+    </div>
+    <div>
+      <h2 class="title roll" (click)="toggleRoll()">Job Experience</h2>
+      <div class="horizontal-line" style="width: 20.6rem"></div>
+    </div>
+  </div>
+
+  <div class="d-flex roll-block" [class.active]="isExpanded">
+    <div class="round-rectangle">
+      <div class="white-squares d-flex flex-column">
+        <span class="wsquare"></span>
+        <span class="wsquare" style="margin-top: 9.2rem"></span>
+        <span class="wsquare" style="margin-top: 9.2rem"></span>
+      </div>
+    </div>
+
+    <div class="job">
+                <h3 class="specialty">Web Designer</h3>
+                <div
+                  class="name-and-year d-flex justify-content-between"
+                  style="margin-right: -3rem"
+                >
+                  <p class="name">Company Name</p>
+                  <p class="year">2018 - Present</p>
+                </div>
+
+                <p class="name-info">
+                  Lorem ipsum dolor sit amet, consectetur <br />
+                  adipiscing elit, sed do eiusmod.
+                </p>
+
+                <h3 class="specialty">Graphic Designer</h3>
+                <div
+                  class="name-and-year d-flex justify-content-between"
+                  style="margin-right: -3rem"
+                >
+                  <p class="name">Company Name</p>
+                  <p class="year">2015 - 2018</p>
+                </div>
+
+                <p class="name-info">
+                  Lorem ipsum dolor sit amet, consectetur <br />
+                  adipiscing elit, sed do eiusmod.
+                </p>
+
+                <h3 class="specialty">Marketing Manager</h3>
+                <div
+                  class="name-and-year d-flex justify-content-between"
+                  style="margin-right: -3rem"
+                >
+                  <p class="name">Company Name</p>
+                  <p class="year">2010 - 2015</p>
+                </div>
+
+                <p class="name-info">
+                  Lorem ipsum dolor sit amet, consectetur <br />
+                  adipiscing elit, sed do eiusmod.
+                </p>
+              </div>
+  </div>
+</section>
