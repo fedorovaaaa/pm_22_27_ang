@@ -1,22 +1,36 @@
 <section class="skills">
-            <div class="horizontal-line2" style="width: 29.6rem"></div>
+  <div class="horizontal-line2" style="width: 29.6rem"></div>
 
-            <div class="d-flex">
-              <div class="red-rectangle3" style="height: 19rem;"></div>
+  <div class="d-flex skills2">
+    <div class="red-rectangle2"></div>
 
-              <div class="trapezoid" style="height: 19rem;">
-              </div>
-              <div style="margin-left: 5.5rem">
-                <div class="d-flex">
-                  <div class="icon-container">
-                    <i class="bi bi-award-fill" style="color: #444444"></i>
-                  </div>
-                  <h2 class="title">Skills</h2>
-                </div>
+    <div class="trapezoid"></div>
+    <div style="margin-left: 5.5rem">
+      <div class="d-flex">
+        <div class="icon-container">
+          <i class="bi bi-award-fill" style="color: #444444"></i>
+        </div>
+        <h2 class="title">Skills</h2>
+      </div>
 
-                <div class="skills-list" id="skills">
-              
-                </div>
-              </div>
-            </div>
-          </section>
+    <div class="skills-list" id="skills">
+  <div class="skill-box" #skillBox *ngFor="let skill of skills">
+    <div class="d-flex">
+      <span class="marker"></span>
+      <p class="skill">{{ skill.name }}</p>
+    </div>
+    <div class="progress-bar1">
+      <div
+        class="progress1"
+        #progressBar
+        [attr.data-progress]="skill.progress + '%'"
+        style="width: 0"
+      ></div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>

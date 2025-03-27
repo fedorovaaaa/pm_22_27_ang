@@ -1,66 +1,30 @@
-import {
-  AngularNodeAppEngine,
-  createNodeRequestHandler,
-  isMainModule,
-  writeResponseToNodeResponse,
-} from '@angular/ssr/node';
 import express from 'express';
-import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-const browserDistFolder = resolve(serverDistFolder, '../browser');
+import cors from 'cors';
 
 const app = express();
-const angularApp = new AngularNodeAppEngine();
+app.use(cors());
 
-/**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/**', (req, res) => {
- *   // Handle API request
- * });
- * ```
- */
+const skills = [
+  { name: "Adobe Photoshop", progress: 85 },
+  { name: "Adobe Illustrator", progress: 40 },
+  { name: "Microsoft Word", progress: 60 },
+  { name: "Microsoft PowerPoint", progress: 60 }
+];
 
-/**
- * Serve static files from /browser
- */
-app.use(
-  express.static(browserDistFolder, {
-    maxAge: '1y',
-    index: false,
-    redirect: false,
-  }),
-);
+const references = [
+  { name: "Michael R. Magee", address: "4418 Bobcat Drive Southfield, MI 48034" },
+  { name: "Travis M. Godinez", address: "2755 Oakmound Drive, Chicago, IL 60605" }
+];
 
-/**
- * Handle all other requests by rendering the Angular application.
- */
-app.use('/**', (req, res, next) => {
-  angularApp
-    .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
-    .catch(next);
-});
+const hobbies = [
+  { name: "Traveling" },
+  { name: "Playing Football" },
+  { name: "Reading Books" }
+];
 
-/**
- * Start the server if this module is the main entry point.
- * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
- */
-if (isMainModule(import.meta.url)) {
-  const port = process.env['PORT'] || 4000;
-  app.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
-  });
-}
+app.get('/skills', (_, res) => res.json(skills));
+app.get('/references', (_, res) => res.json(references));
+app.get('/hobbies', (_, res) => res.json(hobbies));
 
-/**
- * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
- */
-export const reqHandler = createNodeRequestHandler(app);
+const PORT = 1488;
+app.listen(PORT, () => console.log(`Mock API running at http://localhost:${PORT}`));

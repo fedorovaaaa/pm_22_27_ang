@@ -1,5 +1,4 @@
 <section class="education-and-hobbies">
-            <div class="r3"></div>
             <div
               class="horizontal-line2"
               style="width: 34.5rem; margin-left: 1.2rem"
@@ -63,24 +62,26 @@
                     </div>
                   </div>
                 </section>
-                <section class="hobbies">
-                  <h2 class="title">Hobbies</h2>
-                  <div class="d-flex justify-content-end hobby" id="hobbies">
-                    <!-- <div class="d-flex ">
-                      <p>Traveling</p>
-                      <span class="marker2"></span>
-                    </div>
-                    <div class="d-flex" >
-                      <p>Playing Football</p>
-                      <span class="marker2"></span>
-                    </div>-->
-                  </div>
+           <section class="hobbies">
+        <h2 class="title">Hobbies</h2>
 
-                  <div class="d-flex justify-content-end hobby" id="hobby">
-                    <!-- <p>Reading Books</p>
-                    <span class="marker2"></span> -->
-                  </div>
-                </section>
+        <!-- Перші два хобі поруч -->
+        <div class="d-flex justify-content-end hobby" id="hobbies">
+          <div class="d-flex" *ngFor="let hobby of hobbies.slice(0, 2)">
+            <p>{{ hobby.name }}</p>
+            <span class="marker2"></span>
+          </div>
+        </div>
+
+        <!-- Решта по одному в рядок -->
+        <ng-container *ngFor="let hobby of hobbies.slice(2)">
+          <div class="d-flex justify-content-end hobby" id="hobby">
+            <p>{{ hobby.name }}</p>
+            <span class="marker2"></span>
+          </div>
+        </ng-container>
+        
+      </section>
               </div>
               <div class="red-rectangle2"></div>
             </div>

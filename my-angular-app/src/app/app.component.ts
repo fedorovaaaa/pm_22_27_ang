@@ -4,7 +4,7 @@ import { MainContentComponent } from './components/main-content/main-content.com
 
 @Component({
   selector: 'app-root',
-  standalone: true, // Виправлено
+  standalone: true, 
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   imports: [HeaderComponent, MainContentComponent] // Тепер вони standalone

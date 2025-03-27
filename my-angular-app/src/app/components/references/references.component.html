@@ -1,8 +1,12 @@
- <section class="references">
-            <h2 class="title" style="color: #444444; margin-right: 3rem">
-              References
-            </h2>
-            <div id="references">
-            
-            </div>
-          </section>
+<section class="references">
+  <h2 class="title" style="color: #444444; margin-right: 3rem">References</h2>
+  <div id="references">
+    <div class="person" *ngFor="let ref of references">
+      <div class="d-flex justify-content-end">
+        <h3 class="person-name">{{ ref.name }}</h3>
+        <span class="marker"></span>
+      </div>
+      <p class="person-adress">{{ ref.address }}</p>
+    </div>
+  </div>
+</section>
