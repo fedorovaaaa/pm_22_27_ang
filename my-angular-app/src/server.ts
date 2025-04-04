@@ -1,8 +1,9 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 const skills = [
   { name: "Adobe Photoshop", progress: 85 },
@@ -11,7 +12,7 @@ const skills = [
   { name: "Microsoft PowerPoint", progress: 60 }
 ];
 
-const references = [
+let references = [
   { name: "Michael R. Magee", address: "4418 Bobcat Drive Southfield, MI 48034" },
   { name: "Travis M. Godinez", address: "2755 Oakmound Drive, Chicago, IL 60605" }
 ];
@@ -23,8 +24,22 @@ const hobbies = [
 ];
 
 app.get('/skills', (_, res) => res.json(skills));
-app.get('/references', (_, res) => res.json(references));
+
 app.get('/hobbies', (_, res) => res.json(hobbies));
+
+app.get('/references', (_req: Request, res: Response) => {
+  res.json(references);
+});
+
+app.post('/references', (req: Request, res: Response) => {
+  const newRef = req.body;
+  if (newRef && newRef.name && newRef.address) {
+    references.push(newRef);
+    res.status(201).json({ message: 'Reference added', reference: newRef });
+  } else {
+    res.status(400).json({ message: 'Invalid reference' });
+  }
+});
 
 const PORT = 1488;
 app.listen(PORT, () => console.log(`Mock API running at http://localhost:${PORT}`));

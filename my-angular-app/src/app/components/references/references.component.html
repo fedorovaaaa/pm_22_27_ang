@@ -1,5 +1,6 @@
 <section class="references">
   <h2 class="title" style="color: #444444; margin-right: 3rem">References</h2>
+
   <div id="references">
     <div class="person" *ngFor="let ref of references">
       <div class="d-flex justify-content-end">
@@ -9,4 +10,10 @@
       <p class="person-adress">{{ ref.address }}</p>
     </div>
   </div>
+
+    <form [formGroup]="referenceForm" (ngSubmit)="submit()" class="mb-3">
+    <input type="text" formControlName="name" placeholder="Name" required />
+    <input type="text" formControlName="address" placeholder="Address" required />
+    <button type="submit">Add</button>
+  </form>
 </section>

@@ -28,11 +28,17 @@ export class InfoService {
     return this.http.get<Skill[]>(`${this.apiUrl}/skills`);
   }
 
-  getReferences(): Observable<References[]> {
+ getReferences(): Observable<References[]> {
     return this.http.get<References[]>(`${this.apiUrl}/references`);
+  }
+
+  addReference(reference: References): Observable<any> {
+    return this.http.post(`${this.apiUrl}/references`, reference);
   }
 
   getHobbies(): Observable<Hobbies[]> {
     return this.http.get<Hobbies[]>(`${this.apiUrl}/hobbies`);
   }
+
 }
+
