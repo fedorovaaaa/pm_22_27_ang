@@ -1,0 +1,26 @@
+<section class="form">
+  <h1>Реєстрація</h1>
+  <form [formGroup]="SignUpForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Ім'я:</label>
+      <input formControlName="username" />
+      <span *ngIf="SignUpForm.get('username')?.hasError('invalidUsername')">Недопустиме ім'я</span>
+    </div>
+
+    <div>
+      <label>Email:</label>
+      <input type="email" formControlName="email" />
+      <span *ngIf="SignUpForm.get('email')?.hasError('email')">Некоректний email</span>
+    </div>
+
+    <div>
+      <label>Пароль:</label>
+      <input type="password" formControlName="password" />
+      <span *ngIf="SignUpForm.get('password')?.hasError('invalidPassword')">
+        Мінімум 8 символів, 1 велика, 1 мала літера та 1 цифра
+      </span>
+    </div>
+
+    <button type="submit" [disabled]="SignUpForm.invalid">Зареєструватися</button>
+  </form>
+</section>

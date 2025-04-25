@@ -23,6 +23,9 @@ const hobbies = [
   { name: "Reading Books" }
 ];
 
+// Зберігатимемо користувачів в оперативній пам'яті
+const users: any[] = [];
+
 app.get('/skills', (_, res) => res.json(skills));
 
 app.get('/hobbies', (_, res) => res.json(hobbies));
@@ -39,6 +42,31 @@ app.post('/references', (req: Request, res: Response) => {
   } else {
     res.status(400).json({ message: 'Invalid reference' });
   }
+});
+
+app.post('/register', (req: Request, res: Response) => {
+  const newUser = req.body;
+
+  // Перевірка на обов’язкові поля
+  if (!newUser.email || !newUser.password || !newUser.username) {
+    res.status(400).json({ error: 'Всі поля обов’язкові' });
+    return;
+  }
+
+  // Перевірка на існуючого користувача
+  const existingUser = users.find(u => u.email === newUser.email);
+  if (existingUser) {
+    res.status(409).json({ error: 'Користувач з таким email вже існує' });
+    return;
+  }
+
+  // Додаємо нового користувача
+  users.push(newUser);
+  res.status(201).json({ message: 'Користувач зареєстрований', user: newUser });
+});
+
+app.get('/users', (_, res: Response) => {
+  res.json(users); // Показує всіх зареєстрованих користувачів
 });
 
 const PORT = 1488;
