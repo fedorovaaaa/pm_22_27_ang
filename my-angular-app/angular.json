@@ -20,6 +20,7 @@
             "outputPath": "dist/my-angular-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "baseHref": "/",
             "polyfills": [
               "zone.js"
             ],
@@ -32,18 +33,11 @@
               }
             ],
             "styles": [
-  "node_modules/bootstrap/dist/css/bootstrap.min.css",
-  "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-  "public/assets/styles//style.scss"
-]
-,
-            "scripts": [
-],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "public/assets/styles//style.scss"
+            ],
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -71,6 +65,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "my-angular-app:build:development"
+          },
           "configurations": {
             "production": {
               "buildTarget": "my-angular-app:build:production"

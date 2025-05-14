@@ -6,17 +6,22 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
   standalone: true,
   templateUrl: './sign-up.component.html',
-  imports: [CommonModule, ReactiveFormsModule]
+  imports: [CommonModule, ReactiveFormsModule, RouterModule]
 })
+  
 export class SignUpComponent {
   SignUpForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private router: Router) {
     this.SignUpForm = this.fb.group({
       username: ['', [Validators.required, this.usernameValidator]],
       email: ['', [Validators.required, Validators.email]],
@@ -35,18 +40,23 @@ export class SignUpComponent {
     return strongPassword.test(password) ? null : { invalidPassword: true };
   }
 
-  onSubmit() {
-    if (this.SignUpForm.valid) {
-      this.http.post('http://localhost:1488/register', this.SignUpForm.value).subscribe({
-        next: () => alert('Реєстрація успішна'),
-        error: (err) => {
-          if (err.status === 409) {
-            alert('Така пошта вже використовується');
-          } else {
-            alert('Помилка під час реєстрації');
-          }
+onSubmit() {
+  if (this.SignUpForm.valid) {
+    this.http.post('http://localhost:1444/register', this.SignUpForm.value).subscribe({
+      next: () => {
+        localStorage.setItem('user', JSON.stringify(this.SignUpForm.value)); 
+        alert('Реєстрація успішна');
+        this.router.navigate(['/cv']);
+      },
+      error: (err) => {
+        if (err.status === 409) {
+          alert('Така пошта вже використовується');
+        } else {
+          alert('Помилка під час реєстрації');
         }
-      });
-    }
+      }
+    });
   }
+}
+
 }

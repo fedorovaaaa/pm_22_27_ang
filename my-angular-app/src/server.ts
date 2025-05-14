@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
+import path from 'path';
 
 const app = express();
 app.use(cors());
@@ -69,5 +70,19 @@ app.get('/users', (_, res: Response) => {
   res.json(users); // Показує всіх зареєстрованих користувачів
 });
 
-const PORT = 1488;
+app.post('/login', (req: Request, res: Response) => {
+  const { email, password } = req.body;
+
+  const user = users.find((u: { email: string; password: string }) =>
+    u.email === email && u.password === password
+  );
+
+  if (!user) {
+    return res.status(401).json({ error: 'Неправильний email або пароль' });
+  }
+
+  return res.status(200).json({ message: 'Успішний вхід', user });
+});
+
+const PORT = 1444;
 app.listen(PORT, () => console.log(`Mock API running at http://localhost:${PORT}`));

@@ -1,0 +1,25 @@
+<section class="form">
+  <h1>Вхід</h1>
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Email:</label>
+      <input type="email" formControlName="email">
+    </div>
+    <div *ngIf="signInForm.get('email')?.invalid && signInForm.get('email')?.touched">
+      <span *ngIf="signInForm.get('email')?.errors?.['required']">Поле обов'язкове</span>
+      <span *ngIf="signInForm.get('email')?.errors?.['email']">Некоректний email</span>
+    </div>
+
+    <div>
+      <label>Пароль:</label>
+      <input type="password" formControlName="password">
+    </div>
+    <div *ngIf="signInForm.get('password')?.invalid && signInForm.get('password')?.touched">
+      <span *ngIf="signInForm.get('password')?.errors?.['required']">Поле обов'язкове</span>
+    </div>
+
+    <button type="submit" [disabled]="signInForm.invalid">Увійти</button>
+  </form>
+
+  <a routerLink="/register">Ще не зареєстровані?</a>
+</section>

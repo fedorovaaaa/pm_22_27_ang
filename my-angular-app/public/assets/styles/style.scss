@@ -524,3 +524,15 @@ $lgrey-color: #f5f5f5;
         }
     }
 }
+
+.cv-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.cv-header button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}

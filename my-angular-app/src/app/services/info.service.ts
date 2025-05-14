@@ -20,7 +20,7 @@ export interface Hobbies {
   providedIn: 'root'
 })
 export class InfoService {
-  private apiUrl = 'http://localhost:1488';
+  private apiUrl = 'http://localhost:1444';
 
   constructor(private http: HttpClient) {}
 
